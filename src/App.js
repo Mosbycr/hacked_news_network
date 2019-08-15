@@ -1,13 +1,9 @@
-import React, { Component } from "react";
+import React from "react";
 import Header from "../src/components/Header";
 import SearchForm from "../src/components/SearchForm";
 // import API from "./utils/API";
 
-class App extends Component {
-  // state = {
-  //   hackerNewsResult: {},
-  //   searchInput: ""
-  // };
+function App() {
 
   // searchHackerNews = query => {
   //   API.search(query)
@@ -18,19 +14,13 @@ class App extends Component {
   //   this.searchHackerNews(searchQuery);
 
 
-  render() {
+  
     return (
       <div className="App">
         <Header />
-        <SearchForm
-          // value={this.state.searchInput}
-          // searchInput={this.state.searchInput}
-          // handleSearchInputChange={this.handleSearchInputChange}
-          // handleSearchSubmit={this.handleSearchSubmit}
-        />
+        <SearchForm />
       </div>
     );
-  }
 }
 
 export default App;

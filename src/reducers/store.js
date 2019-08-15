@@ -2,7 +2,8 @@ import { createStore } from "redux";
 import { ADD_SEARCH } from '../actions/actionTypes';
 
 const initialState = {
-    searches: []
+    searches: [],
+    searchResults: []
 }
 
 const reducer = (state = initialState, action) => {

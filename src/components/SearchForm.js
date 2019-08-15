@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux';
-import { ADD_SEARCH } from '../actions/actionTypes';
+import { addSearch } from '../actions/actions';
 // import SearchResults from "../components/SearchResults";
 
 class SearchForm extends Component {
@@ -19,10 +19,7 @@ class SearchForm extends Component {
       .trim()
       .replace(/ /g, "%20");
 
-    this.props.dispatch({
-      type: ADD_SEARCH,
-      item: searchValue
-    });
+    this.props.addSearch(addSearch(searchValue));
 
     document.getElementById("searchField").value='';
   }
@@ -55,14 +52,8 @@ function mapStateToProps(state) {
   }
 }
 
-// function mapDispatchToProps(dispatch) {
-//   return{
-//     onSearchSubmit: () => {
-//       console.log('clicked');
-//       const action = { type: 'SEARCHINPUT'};
-//       dispatch(action);
-//     }
-//   }
-// }
+const mapDispatchToProps = {
+   addSearch
+}
 
-export default connect(mapStateToProps)(SearchForm);
+export default connect(mapStateToProps, mapDispatchToProps)(SearchForm);
