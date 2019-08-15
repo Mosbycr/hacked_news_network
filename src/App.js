@@ -15,21 +15,8 @@ class App extends Component {
   //     .catch(err => console.log(err));
   // };
 
-  // handleSearchInputChange = e => {
-  //   const { name, value } = e.target;
-  //   this.setState({
-  //     [name]: value
-  //   });
-  // };
-
-  // handleSearchSubmit = e => {
-  //   e.preventDefault();
-  //   //replaces spaces between search words with HackerNews'
-  //   //required %20 in order for search to work ex)cold%20flu
-  //   const searchQuery = this.state.searchInput.trim().replace(/ /g, "%20");
   //   this.searchHackerNews(searchQuery);
-  //   this.setState({ searchInput: ""});
-  // };
+
 
   render() {
     return (

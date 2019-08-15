@@ -23,6 +23,8 @@ class SearchForm extends Component {
       type: ADD_SEARCH,
       item: searchValue
     });
+
+    document.getElementById("searchField").value='';
   }
 
   render(){
