@@ -5,6 +5,7 @@ class SearchResults extends Component {
   render() {
     return (
       <div>
+        {this.props.error && <p>Error fetching.</p>}
         {this.props.searchResults.map(articles => {
           return (
             <div key={articles.objectID}>
@@ -31,10 +32,10 @@ class SearchResults extends Component {
 }
 
 function mapStateToProps(state) {
-  console.log("mapStateToProps", state);
   return {
     searches: state.searches,
-    searchResults: state.searchResults
+    searchResults: state.searchResults,
+    error: state.error
   };
 }
 
