@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux';
-import { addSearch } from '../actions/actions';
+import { addSearch, fetchResults } from '../actions/actions';
 // import SearchResults from "../components/SearchResults";
 
 class SearchForm extends Component {
@@ -22,6 +22,8 @@ class SearchForm extends Component {
     this.props.addSearch(addSearch(searchValue));
 
     document.getElementById("searchField").value='';
+
+    this.props.fetchResults(searchValue); //need to put url through here with search term
   }
 
   render(){
@@ -53,7 +55,8 @@ function mapStateToProps(state) {
 }
 
 const mapDispatchToProps = {
-   addSearch
+   addSearch,
+   fetchResults
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(SearchForm);

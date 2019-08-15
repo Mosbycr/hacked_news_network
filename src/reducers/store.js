@@ -1,5 +1,6 @@
-import { createStore } from "redux";
+import { createStore, applyMiddleware } from "redux";
 import { ADD_SEARCH } from '../actions/actionTypes';
+import ReduxThunk from 'redux-thunk';
 
 const initialState = {
     searches: [],
@@ -22,6 +23,6 @@ const reducer = (state = initialState, action) => {
     }
 }
 
-const store = createStore(reducer);
+const store = createStore(reducer, applyMiddleware(ReduxThunk));
 
 export default store;
