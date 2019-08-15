@@ -23,7 +23,7 @@ class SearchForm extends Component {
 
     document.getElementById("searchField").value='';
 
-    this.props.fetchResults(searchValue); //need to put url through here with search term
+    this.props.fetchResults(searchValue);
   }
 
   render(){
@@ -36,11 +36,26 @@ class SearchForm extends Component {
           name="searchInput"
           id="searchField"
           ref={this.addSearch}
-          // value={props.value}
-          // onChange={props.handleSearchInputChange}
         />
         <button onClick={this.handleAddSearch}>Submit</button>
       </form>
+      <div>
+        {this.props.searchResults.map(articles => {
+          return (
+            <div key={articles.objectID}>
+              <div>Title: {articles.title}</div>
+              <div>Author: {articles.author}</div>
+            </div>
+            // {news.url ? (
+            //   <a href={news.url} target="_blank" rel="noopener noreferrer">
+            //     View Article: {news.url}
+            //   </a>
+            // ) : (
+            //   <div>Article unavailable</div>
+            // )}
+          );})
+        }
+      </div>
       {/* <SearchResults /> */}
     </div>
   );
@@ -50,7 +65,8 @@ class SearchForm extends Component {
 function mapStateToProps(state) {
   console.log('mapStateToProps', state);
   return {
-    searches: state.searches
+    searches: state.searches,
+    searchResults: state.searchResults
   }
 }
 
