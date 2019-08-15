@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux';
 import { addSearch, fetchResults } from '../actions/actions';
-// import SearchResults from "../components/SearchResults";
+import SearchResults from "../components/SearchResults";
 
 class SearchForm extends Component {
 
@@ -39,24 +39,7 @@ class SearchForm extends Component {
         />
         <button onClick={this.handleAddSearch}>Submit</button>
       </form>
-      <div>
-        {this.props.searchResults.map(articles => {
-          return (
-            <div key={articles.objectID}>
-              <div>Title: {articles.title}</div>
-              <div>Author: {articles.author}</div>
-            </div>
-            // {news.url ? (
-            //   <a href={news.url} target="_blank" rel="noopener noreferrer">
-            //     View Article: {news.url}
-            //   </a>
-            // ) : (
-            //   <div>Article unavailable</div>
-            // )}
-          );})
-        }
-      </div>
-      {/* <SearchResults /> */}
+      <SearchResults />
     </div>
   );
   }
